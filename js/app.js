@@ -158,7 +158,7 @@
           <span class="item-kanji">${item.kanji}</span>
           <span class="item-reading">${item.reading}</span>
         </div>
-        <span class="item-check">${isLearned(idx) ? "✓" : ""}</span>
+        <span class="item-check" ${isLearned(idx) ? "" : 'style="visibility:hidden"'}>✓</span>
       `;
       li.addEventListener("click", () => {
         const pos = visibleOrder.indexOf(idx);
