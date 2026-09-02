@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四字熟語 単語帳</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="app-header">
+  <h1>四字熟語 単語帳</h1>
+  <p class="subtitle">漢検準二級相当</p>
+</header>
+
+<main>
+  <section class="progress-section">
+    <div class="progress-info">
+      <span id="progress-text">0 / 0 覚えた</span>
+      <span id="position-text">1 / 0</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-bar-fill" id="progress-fill"></div>
+    </div>
+  </section>
+
+  <section class="controls-top">
+    <label class="toggle">
+      <input type="checkbox" id="filter-unlearned">
+      未習得のみ表示
+    </label>
+    <button id="shuffle-btn" class="btn btn-secondary">🔀 シャッフル</button>
+    <button id="list-btn" class="btn btn-secondary">📖 一覧・検索</button>
+  </section>
+
+  <section class="card-area">
+    <button id="prev-btn" class="nav-arrow" aria-label="前へ">‹</button>
+
+    <div class="card" id="card" tabindex="0">
+      <div class="card-inner" id="card-inner">
+        <div class="card-face card-front">
+          <span class="learned-badge" id="learned-badge" hidden>✓ 覚えた</span>
+          <p class="kanji" id="card-kanji"></p>
+          <p class="hint">タップして意味を見る</p>
+        </div>
+        <div class="card-face card-back">
+          <p class="kanji-small" id="card-kanji-small"></p>
+          <p class="reading" id="card-reading"></p>
+          <p class="meaning" id="card-meaning"></p>
+        </div>
+      </div>
+    </div>
+
+    <button id="next-btn" class="nav-arrow" aria-label="次へ">›</button>
+  </section>
+
+  <section class="controls-bottom">
+    <button id="unlearned-btn" class="btn btn-outline">もう一度</button>
+    <button id="learned-btn" class="btn btn-primary">覚えた ✓</button>
+  </section>
+
+  <p class="empty-message" id="empty-message" hidden>未習得の四字熟語はありません 🎉</p>
+</main>
+
+<div class="modal-overlay" id="list-modal" hidden>
+  <div class="modal">
+    <div class="modal-header">
+      <h2>一覧・検索</h2>
+      <button id="close-modal-btn" class="btn-close" aria-label="閉じる">×</button>
+    </div>
+    <input type="search" id="search-input" placeholder="四字熟語・読み・意味で検索" class="search-input">
+    <ul class="idiom-list" id="idiom-list"></ul>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
