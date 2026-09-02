@@ -1,3 +1,4 @@
+# リポジトリをPublicにし、Pagesを有効化した後の再デプロイ用
 name: Deploy to GitHub Pages
 
 on:
