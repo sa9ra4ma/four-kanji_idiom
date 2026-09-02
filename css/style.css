@@ -1,37 +1,35 @@
 :root {
-  --color-bg-1: #ffe3f1;
-  --color-bg-2: #e3f0ff;
-  --color-surface: #ffffff;
-  --color-ink: #4a3b52;
-  --color-ink-soft: #9a86a3;
-  --color-primary: #ff6fa5;
-  --color-primary-dark: #ff4f94;
-  --color-secondary: #7bd9c5;
-  --color-accent: #ffd166;
-  --color-purple: #b18aff;
-  --color-border: #ffd6ea;
-  --color-learned: #3fbf8f;
-  --shadow-card: 0 10px 0 var(--color-border), 0 14px 24px rgba(255, 111, 165, 0.25);
-  --shadow-btn: 0 4px 0 rgba(0, 0, 0, 0.12);
+  --color-bg-1: #faf3e7;
+  --color-bg-2: #f0ead9;
+  --color-surface: #fffcf5;
+  --color-ink: #5b4636;
+  --color-ink-soft: #9c8a76;
+  --color-primary: #c97b5b;
+  --color-primary-dark: #b0623f;
+  --color-secondary: #8fa37e;
+  --color-accent: #e4b15c;
+  --color-border: #e6d9c3;
+  --color-learned: #7a9b6e;
+  --shadow-card: 0 6px 18px rgba(91, 70, 54, 0.1);
+  --shadow-btn: 0 2px 6px rgba(91, 70, 54, 0.12);
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg-1: #2a1f33;
-    --color-bg-2: #201f3a;
-    --color-surface: #332942;
-    --color-ink: #f5e9ff;
-    --color-ink-soft: #b6a3c4;
-    --color-primary: #ff8fbb;
-    --color-primary-dark: #ffa6c8;
-    --color-secondary: #7ee2cb;
-    --color-accent: #ffd97d;
-    --color-purple: #c7a9ff;
-    --color-border: #4a3a5c;
-    --color-learned: #6fe0ab;
-    --shadow-card: 0 10px 0 var(--color-border), 0 14px 24px rgba(0, 0, 0, 0.4);
-    --shadow-btn: 0 4px 0 rgba(0, 0, 0, 0.3);
+    --color-bg-1: #241f19;
+    --color-bg-2: #2b241c;
+    --color-surface: #322a21;
+    --color-ink: #f0e6d8;
+    --color-ink-soft: #b3a390;
+    --color-primary: #e0966e;
+    --color-primary-dark: #eaa87e;
+    --color-secondary: #a3bd90;
+    --color-accent: #f0c370;
+    --color-border: #453a2d;
+    --color-learned: #8fbf7c;
+    --shadow-card: 0 6px 18px rgba(0, 0, 0, 0.35);
+    --shadow-btn: 0 2px 6px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -40,9 +38,12 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(160deg, var(--color-bg-1) 0%, var(--color-bg-2) 100%);
+  background: var(--color-bg-1);
+  background-image:
+    radial-gradient(circle at 15% 20%, var(--color-bg-2) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, var(--color-bg-2) 0%, transparent 45%);
   color: var(--color-ink);
-  font-family: "Kosugi Maru", "Zen Maru Gothic", "Hiragino Sans", sans-serif;
+  font-family: "Kosugi Maru", "Hiragino Sans", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,20 +62,20 @@ body {
 
 .deco {
   position: absolute;
-  font-size: 1.8rem;
-  opacity: 0.55;
-  animation: float 6s ease-in-out infinite;
+  font-size: 1.6rem;
+  opacity: 0.35;
+  animation: sway 7s ease-in-out infinite;
 }
 
 .deco-1 { top: 8%; left: 8%; animation-delay: 0s; }
-.deco-2 { top: 16%; right: 10%; font-size: 1.4rem; animation-delay: 1s; }
-.deco-3 { bottom: 14%; left: 12%; animation-delay: 2s; }
-.deco-4 { top: 45%; right: 6%; font-size: 1.2rem; animation-delay: 0.5s; }
-.deco-5 { bottom: 30%; right: 16%; animation-delay: 1.5s; }
+.deco-2 { top: 18%; right: 10%; font-size: 1.3rem; animation-delay: 1.2s; }
+.deco-3 { bottom: 16%; left: 10%; animation-delay: 2.4s; }
+.deco-4 { top: 46%; right: 6%; font-size: 1.2rem; animation-delay: 0.6s; }
+.deco-5 { bottom: 32%; right: 18%; animation-delay: 1.8s; }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-14px) rotate(8deg); }
+@keyframes sway {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(4deg); }
 }
 
 .app-header,
@@ -86,15 +87,15 @@ main,
 
 .app-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .app-header h1 {
   margin: 0;
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-weight: 900;
-  font-size: 1.6rem;
-  letter-spacing: 0.03em;
+  font-family: "Klee One", "Kosugi Maru", sans-serif;
+  font-weight: 600;
+  font-size: 1.45rem;
+  letter-spacing: 0.02em;
   color: var(--color-primary-dark);
   display: flex;
   align-items: center;
@@ -104,19 +105,20 @@ main,
 
 .header-emoji {
   display: inline-block;
-  animation: wiggle 2.4s ease-in-out infinite;
+  animation: leaf-sway 3s ease-in-out infinite;
+  transform-origin: bottom center;
 }
 
-@keyframes wiggle {
-  0%, 100% { transform: rotate(-8deg); }
-  50% { transform: rotate(10deg); }
+@keyframes leaf-sway {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(8deg); }
 }
 
 .subtitle {
   margin: 6px 0 0;
   color: var(--color-ink-soft);
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 400;
 }
 
 main {
@@ -125,7 +127,7 @@ main {
 }
 
 .progress-section {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .progress-info {
@@ -133,24 +135,22 @@ main {
   justify-content: space-between;
   font-size: 0.8rem;
   color: var(--color-ink-soft);
-  font-weight: 700;
   margin-bottom: 6px;
 }
 
 .progress-bar {
-  height: 14px;
+  height: 10px;
   border-radius: 999px;
   background: var(--color-surface);
-  border: 2px solid var(--color-border);
+  border: 1px solid var(--color-border);
   overflow: hidden;
-  padding: 2px;
 }
 
 .progress-bar-fill {
   height: 100%;
   width: 0%;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--color-secondary), var(--color-learned));
+  background: var(--color-secondary);
   transition: width 0.4s ease;
 }
 
@@ -167,51 +167,51 @@ main {
   align-items: center;
   gap: 6px;
   font-size: 0.8rem;
-  font-weight: 700;
   color: var(--color-ink-soft);
   margin-right: auto;
   cursor: pointer;
 }
 
 .toggle input {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   accent-color: var(--color-primary);
 }
 
 .btn {
-  border: none;
-  border-radius: 999px;
-  padding: 10px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 9px 16px;
   font-family: inherit;
   font-size: 0.85rem;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 400;
+  background: var(--color-surface);
+  color: var(--color-ink);
   box-shadow: var(--shadow-btn);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  transition: transform 0.12s ease, background 0.12s ease;
 }
 
 .btn:active {
-  transform: translateY(4px);
-  box-shadow: none;
+  transform: translateY(1px) scale(0.98);
 }
 
 .btn-primary {
   background: var(--color-primary);
+  border-color: var(--color-primary-dark);
   color: #fff;
 }
 
 .btn-outline {
   background: var(--color-surface);
   color: var(--color-ink-soft);
-  border: 2px solid var(--color-border);
-  box-shadow: 0 4px 0 var(--color-border);
+  border: 1px dashed var(--color-border);
 }
 
 .btn-secondary {
   background: var(--color-surface);
   color: var(--color-ink);
-  border: 2px solid var(--color-border);
+  border: 1px solid var(--color-border);
 }
 
 .card-area {
@@ -223,25 +223,23 @@ main {
 
 .nav-arrow {
   background: var(--color-surface);
-  border: 2px solid var(--color-border);
+  border: 1px solid var(--color-border);
   color: var(--color-primary);
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
   border-radius: 50%;
-  font-size: 1.5rem;
-  font-weight: 900;
+  font-size: 1.4rem;
   line-height: 1;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 0 var(--color-border);
+  box-shadow: var(--shadow-btn);
 }
 
 .nav-arrow:active {
-  transform: translateY(4px);
-  box-shadow: none;
+  transform: translateY(1px) scale(0.96);
 }
 
 .card {
@@ -256,7 +254,7 @@ main {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.5s ease;
   transform-style: preserve-3d;
 }
 
@@ -268,10 +266,10 @@ main {
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
-  border-radius: 28px;
+  border-radius: 20px;
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
-  border: 3px solid var(--color-border);
+  border: 1px dashed var(--color-border);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -292,49 +290,48 @@ main {
   position: absolute;
   top: 14px;
   right: 16px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #fff;
-  background: var(--color-learned);
-  padding: 5px 12px;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--color-learned);
+  background: var(--color-bg-1);
+  border: 1px solid var(--color-learned);
+  padding: 4px 10px;
   border-radius: 999px;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .kanji {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 2.6rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
+  font-family: "Klee One", "Kosugi Maru", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   margin: 0;
   color: var(--color-ink);
 }
 
 .hint {
   margin: 16px 0 0;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--color-purple);
+  font-size: 0.78rem;
+  color: var(--color-ink-soft);
 }
 
 .kanji-small {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 900;
+  font-family: "Klee One", "Kosugi Maru", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
   margin: 0 0 8px;
   color: var(--color-ink-soft);
 }
 
 .reading {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--color-primary-dark);
-  font-weight: 700;
+  font-weight: 400;
   margin: 0 0 14px;
 }
 
 .meaning {
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.92rem;
+  line-height: 1.75;
   margin: 0;
 }
 
@@ -345,31 +342,22 @@ main {
 
 .controls-bottom .btn {
   flex: 1;
-  padding: 15px;
-  font-size: 1rem;
-}
-
-.controls-bottom .btn-outline {
-  box-shadow: 0 4px 0 var(--color-border);
-}
-
-.controls-bottom .btn-primary {
-  box-shadow: 0 4px 0 var(--color-primary-dark);
+  padding: 14px;
+  font-size: 0.95rem;
 }
 
 .empty-message {
   text-align: center;
   color: var(--color-ink-soft);
-  font-weight: 700;
   margin-top: 40px;
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
 /* Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(74, 59, 82, 0.45);
+  background: rgba(91, 70, 54, 0.35);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -385,12 +373,12 @@ main {
   width: 100%;
   max-width: 480px;
   max-height: 80vh;
-  border-radius: 28px 28px 0 0;
+  border-radius: 24px 24px 0 0;
   padding: 20px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 3px solid var(--color-border);
+  border: 1px solid var(--color-border);
   border-bottom: none;
 }
 
@@ -403,20 +391,20 @@ main {
 
 .modal-header h2 {
   margin: 0;
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 1.15rem;
+  font-family: "Klee One", "Kosugi Maru", sans-serif;
+  font-size: 1.1rem;
   color: var(--color-primary-dark);
 }
 
 .btn-close {
   background: var(--color-surface);
-  border: 2px solid var(--color-border);
-  font-size: 1.3rem;
+  border: 1px solid var(--color-border);
+  font-size: 1.2rem;
   color: var(--color-ink-soft);
   cursor: pointer;
   line-height: 1;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -425,9 +413,9 @@ main {
 
 .search-input {
   width: 100%;
-  padding: 12px 16px;
-  border-radius: 999px;
-  border: 2px solid var(--color-border);
+  padding: 11px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
   background: var(--color-surface);
   color: var(--color-ink);
   font-family: inherit;
@@ -436,7 +424,7 @@ main {
 }
 
 .search-input:focus {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-secondary);
   outline-offset: 1px;
 }
 
@@ -454,14 +442,14 @@ main {
   gap: 10px;
   padding: 12px 14px;
   margin-bottom: 8px;
-  border-radius: 16px;
+  border-radius: 12px;
   background: var(--color-surface);
-  border: 2px solid var(--color-border);
+  border: 1px solid var(--color-border);
   cursor: pointer;
 }
 
 .idiom-list li:active {
-  transform: scale(0.98);
+  transform: scale(0.99);
 }
 
 .idiom-list .item-main {
@@ -470,8 +458,8 @@ main {
 }
 
 .idiom-list .item-kanji {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-weight: 700;
+  font-family: "Klee One", "Kosugi Maru", sans-serif;
+  font-weight: 600;
   font-size: 1rem;
 }
 
@@ -481,11 +469,11 @@ main {
 }
 
 .idiom-list .item-check {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #fff;
   background: var(--color-learned);
-  min-width: 24px;
-  height: 24px;
+  min-width: 22px;
+  height: 22px;
   border-radius: 50%;
   display: flex;
   align-items: center;
